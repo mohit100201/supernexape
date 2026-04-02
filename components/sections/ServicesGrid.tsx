@@ -52,15 +52,7 @@ export default function ServicesGrid() {
                   <h3 className="text-xl font-black text-slate-900 mb-3 uppercase tracking-tight">{s.title}</h3>
                   <p className="text-slate-500 text-xs leading-relaxed mb-8 font-medium">{s.desc}</p>
 
-                  <div className="pt-4 border-t border-slate-200 flex justify-between items-center">
-                    <div className="flex flex-col">
-                      <span className="text-[9px] font-bold text-cyan-600 uppercase tracking-widest">Commission</span>
-                      <span className="text-sm font-black text-slate-900 uppercase">{s.earn}</span>
-                    </div>
-                    <div className="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-400 group-hover:bg-cyan-500 group-hover:text-white transition-all">
-                      <ArrowRight size={14} />
-                    </div>
-                  </div>
+                  
                 </Link>
               </motion.div>
             );

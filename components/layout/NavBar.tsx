@@ -48,20 +48,21 @@ export default function Navbar() {
       }`}>
         
         {/* LOGO CONTAINER - Absolute positioning prevents it from stretching the navbar height */}
-        <div 
-          className="absolute left-6 lg:left-10 cursor-pointer transition-all duration-500"
-          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          style={{ top: scrolled ? '50%' : '50%', transform: 'translateY(-50%)' }}
-        >
-          <img 
-            src="/supernexape.png" 
-            alt="SuperNexape" 
-            // Inlarge the logo here (w-48 or higher)
-            className={`transition-all duration-700 object-contain drop-shadow-2xl ${
-                scrolled ? 'w-24 lg:w-32' : 'w-40 lg:w-56' 
-            }`} 
-          />
-        </div>
+       {/* LOGO CONTAINER */}
+<div 
+  className="absolute left-6 lg:left-10 cursor-pointer transition-all duration-500"
+  onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+  style={{ top: scrolled ? '50%' : '50%', transform: 'translateY(-50%)' }}
+>
+  <img 
+    // Logic: If scrolled (dark bg), use Light logo. Otherwise, use standard logo.
+    src={scrolled ? "/SuperNexapeLight.png" : "/supernexape.png"} 
+    alt="SuperNexApe" 
+    className={`transition-all duration-700 object-contain drop-shadow-2xl ${
+        scrolled ? 'w-24 lg:w-32' : 'w-40 lg:w-56' 
+    }`} 
+  />
+</div>
 
         {/* Placeholder to push links to the right so they don't overlap the logo */}
         <div className={`transition-all duration-500 ${scrolled ? 'w-24 lg:w-32' : 'w-40 lg:w-56'}`} />
