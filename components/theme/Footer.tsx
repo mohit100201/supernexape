@@ -1,8 +1,7 @@
 "use client";
 import React from "react";
-import { Mail, Phone, MapPin, Send, ArrowUpRight } from "lucide-react";
+import { Mail, Phone, MapPin, Send, ArrowUpRight, Globe } from "lucide-react";
 import { SettingsData, ThemeData } from "@/interface/common.interface";
-
 
 interface FooterNavItemProps {
   themeData: ThemeData;
@@ -11,6 +10,7 @@ interface FooterNavItemProps {
 
 const FooterNavItem: React.FC<FooterNavItemProps> = ({ themeData, settingsData }) => {
   const currentYear = new Date().getFullYear();
+  
   const navItems = [
     { name: "Home", target: "home" },
     { name: "Services", target: "services" },
@@ -30,12 +30,9 @@ const FooterNavItem: React.FC<FooterNavItemProps> = ({ themeData, settingsData }
         behavior: "smooth",
       });
     } else if (id === "home") {
-      // Fallback for Home if ID isn't found at the very top
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
   };
-
- 
 
   return (
     <footer className="relative bg-slate-950 pt-24 pb-12 overflow-hidden selection:bg-indigo-500/30">
@@ -88,7 +85,6 @@ const FooterNavItem: React.FC<FooterNavItemProps> = ({ themeData, settingsData }
             <p className="text-slate-400 leading-relaxed font-medium">
               Empowering global entrepreneurs with seamless financial infrastructure and real-time intelligence.
             </p>
-           
           </div>
 
           {/* Useful Links */}
@@ -111,6 +107,7 @@ const FooterNavItem: React.FC<FooterNavItemProps> = ({ themeData, settingsData }
               ))}
             </ul>
           </div>
+
           {/* Legal */}
           <div className="space-y-8">
             <h4 className="text-white font-bold uppercase tracking-widest text-xs">Legal</h4>
@@ -122,42 +119,41 @@ const FooterNavItem: React.FC<FooterNavItemProps> = ({ themeData, settingsData }
             </ul>
           </div>
 
-          {/* Contact Info */}
+          {/* Contact Info (Updated with your provided data) */}
           <div className="space-y-8">
             <h4 className="text-white font-bold uppercase tracking-widest text-xs">Reach Us</h4>
             <div className="space-y-6">
-              {settingsData?.support_email && (
-                <div className="flex gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-indigo-500/10 flex items-center justify-center text-indigo-400"><Mail size={20} /></div>
-                  <div>
-                    <p className="text-xs font-bold text-slate-500 uppercase tracking-widest">Email</p>
-                    <p className="text-white font-medium">{settingsData.support_email}</p>
-                  </div>
+              
+              {/* Email */}
+              <div className="flex gap-4">
+                <div className="w-10 h-10 rounded-xl bg-indigo-500/10 flex items-center justify-center text-indigo-400 shrink-0"><Mail size={18} /></div>
+                <div>
+                  <p className="text-xs font-bold text-slate-500 uppercase tracking-widest">Email</p>
+                  <p className="text-white font-medium break-all">{settingsData?.support_email || "support@supernexape.com"}</p>
                 </div>
-              )}
-              {settingsData?.support_number && (
-                <div className="flex gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-400"><Phone size={20} /></div>
-                  <div>
-                    <p className="text-xs font-bold text-slate-500 uppercase tracking-widest">Phone</p>
-                    <p className="text-white font-medium">{settingsData.support_number}</p>
-                  </div>
-                </div>
-              )}
+              </div>
 
-              {settingsData?.contact_address && (
-      <div className="flex gap-4">
-        <div className="w-10 h-10 rounded-xl bg-amber-500/10 flex items-center justify-center text-amber-400">
-          <MapPin size={20} />
-        </div>
-        <div>
-          <p className="text-xs font-bold text-slate-500 uppercase tracking-widest">Address</p>
-          <p className="text-white font-medium leading-relaxed max-w-[200px]">
-            {settingsData.contact_address}
-          </p>
-        </div>
-      </div>
-    )}
+              {/* Phone Numbers (India & UAE) */}
+              <div className="flex gap-4">
+                <div className="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-400 shrink-0"><Phone size={18} /></div>
+                <div className="space-y-1">
+                  <p className="text-xs font-bold text-slate-500 uppercase tracking-widest">Phone</p>
+                  <p className="text-white font-medium">+91 95299 11808 (IN)</p>
+                  <p className="text-white font-medium">+971 55 477 6481 (UAE)</p>
+                </div>
+              </div>
+
+              {/* Address */}
+              <div className="flex gap-4">
+                <div className="w-10 h-10 rounded-xl bg-amber-500/10 flex items-center justify-center text-amber-400 shrink-0"><MapPin size={18} /></div>
+                <div>
+                  <p className="text-xs font-bold text-slate-500 uppercase tracking-widest">Address</p>
+                  <p className="text-white font-medium leading-relaxed max-w-[240px]">
+                    Gk-11/89 Gf-3, Indrapuram, Shipra Sun City, Ghaziabad, Uttar Pradesh, India, 201014
+                  </p>
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
