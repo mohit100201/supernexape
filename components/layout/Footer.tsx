@@ -60,14 +60,14 @@ export default function Footer() {
                     <Mail className="text-cyan-500" size={18} />
                   </div>
                   <p className="text-sm font-bold hover:text-cyan-400 cursor-pointer transition-colors">
-                    support@supernexape.com
+                    support@supernexape.in
                   </p>
                 </div>
               </div>
 
               <div className="max-w-[240px]"> {/* Restricts the width so it doesn't span the whole container */}
                 <a
-                  href="tel:+919529911808"
+                  href="tel:+971 55 477 6481"
                   className="p-3.5 rounded-2xl bg-white/[0.03] border border-white/5 hover:border-cyan-500/30 hover:bg-white/[0.05] transition-all group block"
                 >
                   <div className="flex items-center justify-between mb-1.5">
@@ -80,7 +80,7 @@ export default function Footer() {
                   </div>
 
                   <p className="text-white font-black tracking-tight text-base group-hover:text-cyan-400 transition-colors flex items-center justify-between">
-                    +91 95299 11808
+                    +971 55 477 6481
                     <span className="opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0 transition-all text-cyan-500">
                       <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14m-7-7 7 7-7 7" /></svg>
                     </span>
