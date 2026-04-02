@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { Mail, Phone, MapPin, Send, ArrowUpRight, Globe } from "lucide-react";
+import { Mail, Phone, MapPin, Send, ArrowUpRight } from "lucide-react";
 import { SettingsData, ThemeData } from "@/interface/common.interface";
 
 interface FooterNavItemProps {
@@ -49,7 +49,7 @@ const FooterNavItem: React.FC<FooterNavItemProps> = ({ themeData, settingsData }
               Ready to <span className="text-indigo-400">transform</span> <br /> your business?
             </h2>
             <p className="text-slate-400 text-lg max-w-md font-medium">
-              Join 10,000+ businesses growing with {themeData.company_name}.
+              Join 10,000+ businesses growing with your platform.
             </p>
           </div>
 
@@ -74,13 +74,17 @@ const FooterNavItem: React.FC<FooterNavItemProps> = ({ themeData, settingsData }
         {/* ─── MIDDLE SECTION: LINKS & BRAND ─── */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 py-20">
 
-          {/* Brand Identity */}
-          <div className="space-y-8">
-            <div className="flex items-center gap-4 group">
-              <div className="w-12 h-12 rounded-2xl bg-white flex items-center justify-center p-2 shadow-2xl group-hover:rotate-6 transition-transform duration-500">
-                <img src={themeData.logo} alt="logo" className="w-full h-full object-contain" />
-              </div>
-              <span className="text-2xl font-black text-white tracking-tighter">{themeData.company_name}</span>
+          {/* Brand Identity - LOGO ONLY */}
+          <div className="space-y-8 flex flex-col items-start">
+            <div 
+              className="relative group cursor-pointer transition-transform duration-500 hover:scale-110"
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            >
+               <img 
+                 src={themeData.logo} 
+                 alt="Logo" 
+                 className="w-32 h-32 lg:w-40 lg:h-40 object-contain drop-shadow-[0_0_15px_rgba(79,70,229,0.3)]" 
+               />
             </div>
             <p className="text-slate-400 leading-relaxed font-medium">
               Empowering global entrepreneurs with seamless financial infrastructure and real-time intelligence.
@@ -119,12 +123,11 @@ const FooterNavItem: React.FC<FooterNavItemProps> = ({ themeData, settingsData }
             </ul>
           </div>
 
-          {/* Contact Info (Updated with your provided data) */}
+          {/* Contact Info */}
           <div className="space-y-8">
             <h4 className="text-white font-bold uppercase tracking-widest text-xs">Reach Us</h4>
             <div className="space-y-6">
               
-              {/* Email */}
               <div className="flex gap-4">
                 <div className="w-10 h-10 rounded-xl bg-indigo-500/10 flex items-center justify-center text-indigo-400 shrink-0"><Mail size={18} /></div>
                 <div>
@@ -133,7 +136,6 @@ const FooterNavItem: React.FC<FooterNavItemProps> = ({ themeData, settingsData }
                 </div>
               </div>
 
-              {/* Phone Numbers (India & UAE) */}
               <div className="flex gap-4">
                 <div className="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-400 shrink-0"><Phone size={18} /></div>
                 <div className="space-y-1">
@@ -143,7 +145,6 @@ const FooterNavItem: React.FC<FooterNavItemProps> = ({ themeData, settingsData }
                 </div>
               </div>
 
-              {/* Address */}
               <div className="flex gap-4">
                 <div className="w-10 h-10 rounded-xl bg-amber-500/10 flex items-center justify-center text-amber-400 shrink-0"><MapPin size={18} /></div>
                 <div>
@@ -161,7 +162,7 @@ const FooterNavItem: React.FC<FooterNavItemProps> = ({ themeData, settingsData }
         {/* ─── BOTTOM SECTION: COPYRIGHT ─── */}
         <div className="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-slate-500 text-sm font-medium">
-            © {currentYear} <span className="text-white font-bold">{themeData.company_name}</span>. Built for the future of finance.
+            © {currentYear} <span className="text-white font-bold">SUPERNEXAPE</span>. Built for the future of finance.
           </p>
           <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/5">
             <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
